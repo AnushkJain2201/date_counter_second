@@ -49,7 +49,14 @@ const Counter = () => {
           <span>{count === 0 ? "Today Is " : count > 0 ? `${count} Days From Today Is ` : `${Math.abs(count)} Days Ago Was `}</span>
           <span>{date.toDateString()}</span>
         </h3>
+
       </div>
+
+      { (count !== 0 || step !== 1) ? <button onClick={() => {
+          setCount(0);
+          setStep(1);
+        }}>Reset</button> : null }
+        
     </div>
   );
 }
